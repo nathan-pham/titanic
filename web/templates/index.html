@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link
+            rel="icon"
+            href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚢</text></svg>"
+        />
+        <title>Will you die on the Titanic?</title>
+
+        <link rel="stylesheet" href="/css/index.css" />
+        <script type="module" src="/js/app.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <h1>Will you die on the Titanic?</h1>
+            <p>Enter in your information below:</p>
+
+            <form action="/api/predict" method="POST">
+                <input
+                    name="pclass"
+                    placeholder="Passenger Ticket Class (1, 2, 3)"
+                    type="text"
+                />
+                <input name="sex" placeholder="Male or Female" type="text" />
+                <input name="age" placeholder="Age" type="number" />
+                <input
+                    name="sibsp"
+                    placeholder="Siblings / spouses aboard the ship"
+                    type="number"
+                />
+                <input
+                    name="parch"
+                    placeholder="Parents / children aboard the ship"
+                    type="number"
+                />
+                <input name="fare" placeholder="Passenger fare" type="number" />
+                <button>Submit</button>
+            </form>
+
+            <p>You will <span id="prediction">...</span></p>
+        </div>
+    </body>
+</html>
